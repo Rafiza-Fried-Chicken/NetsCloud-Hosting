@@ -1,1 +1,21 @@
-
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "src/*.html",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "utils/*.js",
+      "use": "@vercel/node"
+    }
+  ],
+  "routes": [
+    { "src": "/", "dest": "/src/home.html" },
+    { "src": "/login", "dest": "/src/login.html" },
+    { "src": "/register", "dest": "/src/register.html" },
+    { "src": "/dashboard", "dest": "/src/dashboard.html" },
+    { "src": "/domains", "dest": "/src/domains.html" },
+    { "src": "/cpanel", "dest": "/src/cpanel.html" }
+  ]
+}
