@@ -1,1 +1,145 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>NetHosting - CPanel Hosting</title>
+  <style>
+    /* Reset & base */
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
+    body {
+      margin: 0; padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #121212;
+      color: #e0e0e0;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 1rem;
+      user-select: none;
+    }
+    a {
+      color: #40c4ff;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+    a:hover, a:focus {
+      color: #82d4ff;
+      outline: none;
+    }
+    /* Navbar */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      background: #1f1f1f;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.75rem 1.5rem;
+      z-index: 1000;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.7);
+    }
+    nav .logo {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    nav .logo img {
+      height: 32px;
+      width: auto;
+      filter: drop-shadow(0 0 1px #40c4ff);
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 1.5rem;
+      margin: 0;
+      padding: 0;
+    }
+    nav ul li {
+      position: relative;
+    }
+    nav ul li a {
+      font-weight: 600;
+      font-size: 1rem;
+      padding: 0.25rem 0;
+      display: inline-block;
+      border-bottom: 2px solid transparent;
+      transition: border-color 0.3s ease;
+    }
+    nav ul li a:hover,
+    nav ul li a:focus {
+      border-bottom: 2px solid #40c4ff;
+    }
+    nav ul li.coming-soon a::after {
+      content: " (Coming Soon)";
+      font-size: 0.75rem;
+      color: #888;
+      font-weight: 400;
+    }
+    /* Content */
+    main {
+      margin-top: 64px;
+      max-width: 600px;
+      padding: 2rem 1rem;
+    }
+    h1 {
+      font-size: 2.5rem;
+      color: #40c4ff;
+      margin-bottom: 1rem;
+      text-shadow: 0 0 8px #40c4ffaa;
+    }
+    p {
+      font-size: 1.25rem;
+      color: #b0bec5;
+      margin-bottom: 2rem;
+    }
+    .btn-back {
+      background-color: #40c4ff;
+      color: #121212;
+      font-weight: 600;
+      padding: 0.75rem 2rem;
+      border-radius: 30px;
+      border: none;
+      cursor: pointer;
+      font-size: 1.1rem;
+      box-shadow: 0 4px 12px #40c4ff88;
+      transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease;
+      user-select: none;
+      text-decoration: none;
+      display: inline-block;
+    }
+    .btn-back:hover, .btn-back:focus {
+      background-color: #82d4ff;
+      box-shadow: 0 6px 20px #82d4ffcc;
+      transform: translateY(-3px);
+      outline: none;
+    }
+  </style>
+</head>
+<body>
+  <nav role="navigation" aria-label="Main navigation">
+    <div class="logo">
+      <img src="https://example.com/logo.png" alt="NetHosting Logo" />
+    </div>
+    <ul>
+      <li><a href="src/home.html">Home</a></li>
+      <li><a href="src/dashboard.html">Cloud</a></li>
+      <li class="coming-soon"><a href="src/domains.html" tabindex="-1" aria-disabled="true">Domains</a></li>
+      <li><a href="src/cpanel.html">CPanel Hosting</a></li>
+      <li><a href="src/login.html">Login/Register</a></li>
+    </ul>
+  </nav>
 
+  <main tabindex="-1">
+    <h1>CPanel Hosting</h1>
+    <p>Halaman ini masih kosong dan akan segera kami kembangkan.</p>
+    <a href="src/home.html" class="btn-back" role="button" aria-label="Kembali ke halaman Home">Kembali ke Home</a>
+  </main>
+</body>
+</html>
