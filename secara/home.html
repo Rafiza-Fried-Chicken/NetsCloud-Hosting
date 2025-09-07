@@ -1,1 +1,240 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>NetHosting - Home</title>
+  <style>
+    /* Reset & base */
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
+    body {
+      margin: 0; padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #121212;
+      color: #e0e0e0;
+      line-height: 1.5;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      scroll-behavior: smooth;
+    }
+    a {
+      color: #40c4ff;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+    a:hover, a:focus {
+      color: #82d4ff;
+      outline: none;
+    }
+    /* Navbar */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      background: #1f1f1f;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.75rem 1.5rem;
+      z-index: 1000;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.7);
+    }
+    nav .logo {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    nav .logo img {
+      height: 32px;
+      width: auto;
+      filter: drop-shadow(0 0 1px #40c4ff);
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 1.5rem;
+      margin: 0;
+      padding: 0;
+    }
+    nav ul li {
+      position: relative;
+    }
+    nav ul li a {
+      font-weight: 600;
+      font-size: 1rem;
+      padding: 0.25rem 0;
+      display: inline-block;
+      border-bottom: 2px solid transparent;
+      transition: border-color 0.3s ease;
+    }
+    nav ul li a:hover,
+    nav ul li a:focus {
+      border-bottom: 2px solid #40c4ff;
+    }
+    nav ul li.coming-soon a::after {
+      content: " (Coming Soon)";
+      font-size: 0.75rem;
+      color: #888;
+      font-weight: 400;
+    }
+    /* Main content */
+    main {
+      margin-top: 64px;
+      flex-grow: 1;
+      padding: 2rem 1rem 4rem;
+      max-width: 1200px;
+      margin-left: auto;
+      margin-right: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 3rem;
+    }
+    /* Hero Section */
+    .hero {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 1rem;
+      padding: 3rem 1rem 4rem;
+      background: linear-gradient(135deg, #121212 0%, #1a1a1a 100%);
+      border-radius: 12px;
+      box-shadow: 0 0 20px #40c4ff33;
+      user-select: none;
+    }
+    .hero img {
+      height: 80px;
+      width: auto;
+      filter: drop-shadow(0 0 4px #40c4ff);
+    }
+    .hero h1 {
+      font-size: 2.75rem;
+      font-weight: 700;
+      color: #40c4ff;
+      margin: 0;
+      text-shadow: 0 0 8px #40c4ffaa;
+    }
+    .hero p {
+      font-size: 1.25rem;
+      max-width: 600px;
+      color: #cfd8dc;
+      margin: 0;
+    }
+    .hero .cta-buttons {
+      display: flex;
+      gap: 1.25rem;
+      margin-top: 1.5rem;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .btn {
+      background-color: #40c4ff;
+      color: #121212;
+      font-weight: 600;
+      padding: 0.75rem 2rem;
+      border-radius: 30px;
+      border: none;
+      cursor: pointer;
+      font-size: 1.1rem;
+      box-shadow: 0 4px 12px #40c4ff88;
+      transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease;
+      user-select: none;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .btn:hover, .btn:focus {
+      background-color: #82d4ff;
+      box-shadow: 0 6px 20px #82d4ffcc;
+      transform: translateY(-3px);
+      outline: none;
+    }
+    /* Feature Cards */
+    .features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit,minmax(280px,1fr));
+      gap: 2rem;
+    }
+    .feature-card {
+      background: #1e1e1e;
+      border-radius: 12px;
+      padding: 1.75rem 1.5rem;
+      box-shadow: 0 0 12px #40c4ff44;
+      transition: box-shadow 0.3s ease, transform 0.3s ease;
+      cursor: default;
+      user-select: none;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    .feature-card:hover, .feature-card:focus-within {
+      box-shadow: 0 0 20px #40c4ffaa;
+      transform: translateY(-6px);
+      outline: none;
+    }
+    .feature-card h3 {
+      margin: 0;
+      font-size: 1.5rem;
+      color: #40c4ff;
+    }
+    .feature-card p {
+      margin: 0;
+      color: #b0bec5;
+      flex-grow: 1;
+    }
+    /* Responsive */
+    @media (max-width: 600px) {
+      .hero h1 {
+        font-size: 2rem;
+      }
+      .hero p {
+        font-size: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav role="navigation" aria-label="Main navigation">
+    <div class="logo">
+      <img src="https://example.com/logo.png" alt="NetHosting Logo" />
+    </div>
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="src/dashboard.html">Cloud</a></li>
+      <li class="coming-soon"><a href="src/domains.html" tabindex="-1" aria-disabled="true">Domains</a></li>
+      <li><a href="src/cpanel.html">CPanel Hosting</a></li>
+      <li><a href="src/login.html">Login/Register</a></li>
+    </ul>
+  </nav>
 
+  <main id="home" tabindex="-1">
+    <section class="hero" aria-label="Hero section">
+      <img src="https://example.com/logo.png" alt="NetHosting Logo" />
+      <h1>NetHosting - Layanan Hosting & Cloud Storage Modern</h1>
+      <p>Simpan, kelola, dan akses file Anda dengan mudah dan aman di cloud kami. Gratis dan Plus dengan fitur lengkap.</p>
+      <div class="cta-buttons">
+        <a href="src/register.html" class="btn" role="button">Daftar</a>
+        <a href="src/login.html" class="btn" role="button">Login</a>
+      </div>
+    </section>
+
+    <section class="features" aria-label="Fitur layanan">
+      <article class="feature-card" tabindex="0">
+        <h3>Cloud Free</h3>
+        <p>
+          Penyimpanan gratis hingga 5GB dengan akses cepat dan aman. Cocok untuk penggunaan pribadi dan file penting Anda.
+        </p>
+      </article>
+      <article class="feature-card" tabindex="0">
+        <h3>Cloud Plus</h3>
+        <p>
+          Penyimpanan hingga 100GB dengan fitur tambahan seperti enkripsi tingkat lanjut, prioritas support, dan akses multi-perangkat.
+        </p>
+      </article>
+    </section>
+  </main>
+</body>
+</html>
